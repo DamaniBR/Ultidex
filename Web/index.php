@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dex</title>
     <link rel="stylesheet" href="Styles/style.css">
 </head>
+
 <body>
     <nav id="navbar">
         <h2>dex</h2>
@@ -20,9 +22,12 @@
         <div id="pokemon-list">
             <input type="text" id="search-bar" placeholder="Search Pokemon...">
             <ul>
-                <li onclick="displayPokemonDetails('Bulbasaur')">Bulbasaur</li>
-                <li onclick="displayPokemonDetails('Ivysaur')">Ivysaur</li>
-                <!-- Add more pokemons here -->
+                <?php
+                $pokemons = array("Bulbasaur", "Ivysaur"); // Add more pokemons here
+                foreach ($pokemons as $pokemon) {
+                    echo '<li onclick="displayPokemonDetails(\'' . $pokemon . '\')">' . $pokemon . '</li>';
+                }
+                ?>
             </ul>
         </div>
         <div id="pokemon-details">
@@ -38,4 +43,5 @@
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
